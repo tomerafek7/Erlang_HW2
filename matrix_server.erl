@@ -1,5 +1,5 @@
 -module (matrix_server).
--compie(export_all).
+-compile(export_all).
 
 start_server() ->
 	spawn(?MODULE, start_server_restarter, []).

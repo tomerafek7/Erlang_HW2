@@ -6,7 +6,7 @@ matrix_server_loop() ->
 	receive
 		{Pid, MsgRef, {multiple, Mat1, Mat2}} ->
 			spawn(matrix_calc, mat_mul, [Mat1, Mat2, Pid, MsgRef]),
-			loop();
+			matrix_server_loop();
 		shutdown ->
 			A=1;
 		{Pid, MsgRef, get_version} ->
